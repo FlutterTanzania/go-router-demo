@@ -12,21 +12,51 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Home"),
+      ),
+
+      //
       body: Center(
         child: ListView(
           children: [
-            InkWell(
-              onTap: () {
-                return context.go('/sub');
-              },
-              child: Text("List"),
+            //
+            const SizedBox(
+              height: 20,
             ),
 
             //
-            SizedBox(
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  return context.goNamed("sub");
+                },
+                child: const Text("Go to sub page"),
+              ),
+            ),
+
+            //
+            const SizedBox(
               height: 20,
             ),
-            Text("Sub home"),
+
+            //
+            const Center(
+              child: Text("Sub home"),
+            ),
+
+            //
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  return context.goNamed(
+                    "cats",
+                    params: <String, String>{"name": "Pod"},
+                  );
+                },
+                child: const Text("Go to cat page"),
+              ),
+            ),
           ],
         ),
       ),

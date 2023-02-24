@@ -11,7 +11,12 @@ class _SubHomeState extends State<SubHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Another home")),
+      appBar: AppBar(
+        title: const Text("Sub page"),
+      ),
+      body: const Center(
+        child: Text("Another page"),
+      ),
     );
   }
 }

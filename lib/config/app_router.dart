@@ -1,23 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gorouter/cats.dart';
 import 'package:gorouter/home.dart';
 import 'package:gorouter/sub_home.dart';
 
 final GoRouter router = GoRouter(
   routes: <GoRoute>[
     GoRoute(
-      path: "/",
-      builder: (BuildContext context, GoRouterState state) {
-        return const HomePage();
-      },
-    ),
+        path: "/",
+        name: "home",
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomePage();
+        },
 
-    //
-    GoRoute(
-      path: "/sub",
-      builder: (BuildContext context, GoRouterState state) {
-        return const SubHome();
-      },
-    ),
+        //
+        routes: [
+          //
+          GoRoute(
+            path: "sub",
+            name: "sub",
+            builder: (BuildContext context, GoRouterState state) {
+              return const SubHome();
+            },
+          ),
+
+          //
+          GoRoute(
+            path: "cats",
+            name: "cats",
+            builder: (BuildContext context, GoRouterState state) {
+              print(state.params);
+              return CatsPage(name: state.params['name'].toString());
+            },
+          ),
+        ]),
   ],
 );

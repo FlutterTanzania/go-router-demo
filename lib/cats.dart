@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CatsPage extends StatefulWidget {
-  final String name;
-  const CatsPage({super.key, required this.name});
+  const CatsPage({super.key});
 
   @override
   State<CatsPage> createState() => _CatsPageState();
@@ -11,9 +10,9 @@ class CatsPage extends StatefulWidget {
 class _CatsPageState extends State<CatsPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: Text(widget.name),
+        child: Text("Pok"),
       ),
     );
   }

@@ -41,18 +41,10 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //
-            const Center(
-              child: Text("Sub home"),
-            ),
-
-            //
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  return context.goNamed(
-                    "cats",
-                    params: <String, String>{"name": "Pod"},
-                  );
+                  return context.goNamed("cats");
                 },
                 child: const Text("Go to cat page"),
               ),

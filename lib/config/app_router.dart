@@ -29,8 +29,7 @@ final GoRouter router = GoRouter(
             path: "cats",
             name: "cats",
             builder: (BuildContext context, GoRouterState state) {
-              print(state.params);
-              return CatsPage(name: state.params['name'].toString());
+              return const CatsPage();
             },
           ),
         ]),
